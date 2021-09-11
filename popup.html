@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="max-width: 350px;">
+<head>
+    <style>
+        body {
+            width: 190px;
+            margin: 0;
+            text-align: center;
+		}
+        #top {
+            color: #fff;
+            margin: 0;
+            padding: .8em 0;
+		}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics</title>
+    <script src="./jQuery.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top">
+        <h2 id="songName" style="margin-bottom: 5px;">loding lyrics</h2>
+        <i id="by"></i>
+        <h4 id="artistName" style="margin-top: 5px;"></h4>
+    </div>
+
+    <div id="tools">
+        <div hidden id="search_panel">
+            <div id="bt_search" class="fab" title="Not right? Search yourself."><img src="./images/bt_search.png"></div>
+            <div id="search_fields">
+                <input hidden type="text" id="artist" placeholder="artist name">
+                <input hidden type="text" id="song" placeholder="song name">
+            </div>
+        </div>
+    </div>
+
+    <div id="lyrics"></div>
+    
+
+    <script src="./popup.js"></script>
+</body>
+</html>

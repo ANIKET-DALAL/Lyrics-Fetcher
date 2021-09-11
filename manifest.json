@@ -1,0 +1,38 @@
+{
+    "name": "Lyrics",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "View lyrics for songs on Youtube",
+    "icons": {
+        "16": "./images/pngegg16.png",
+        "48": "./images/pngegg48.png",
+        "128": "./images/pngegg128.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["jQuery.js", "content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "./images/pngegg16.png",
+        "default_popup": "popup.html",
+        "default_title": "Get this song lyrics"
+    },
+    "options_ui": {
+        "page": "./options.html",
+        "open_in_tab": false
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage",
+        "webNavigation",
+        "<all_urls>",
+        "*://*/*"
+    ]
+}
