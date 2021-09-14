@@ -58,18 +58,36 @@ function getLyricsByArtistAndSong(artist, song) {
                                     let artistName = data.response.hits[0].result.primary_artist.name
                                     let html = $($.parseHTML(data_recieved))
                                     let ly = html.find(".lyrics").text();
-                                    ly = ly.split(/\r?\n/);
-                                    ly.forEach(function(element, index, arr){
-                                        if(arr[index].trim() !== "")
-                                            arr[index] = `<p> ${arr[index]} </p>`;
-                                    });
-                                    if($.trim(song_name.html())!=''){
-                                        song_name.empty()
+                                    if(ly!="") {
+                                        ly = ly.split(/\r?\n/);
+                                        console.log(ly)
+                                        ly.forEach(function(element, index, arr){
+                                            if(arr[index].trim() !== "")
+                                                arr[index] = `<p> ${arr[index]} </p>`;
+                                        });
+                                        if($.trim(song_name.html())!=''){
+                                            song_name.empty()
+                                        }
+                                        song_name.append(songTitle)
+                                        by.append('by')
+                                        artist_name.append(artistName)
+                                        lyrics.append(ly)
                                     }
-                                    song_name.append(songTitle)
-                                    by.append('by')
-                                    artist_name.append(artistName)
-                                    lyrics.append(ly)
+                                    else {
+                                        ly = html.find(".Lyrics__Container-sc-1ynbvzw-8");
+                                        if($.trim(song_name.html())!=''){
+                                            song_name.empty()
+                                        }
+                                        song_name.append(songTitle)
+                                        by.append('by')
+                                        artist_name.append(artistName)
+                                        lyrics.append(ly)
+                                        $('a').contents().unwrap()
+                                        $('span').contents().unwrap()
+                                        $(function () {
+                                            $('body').html($('body').html().replace(/<br>\\*/g, "</p><p>"))
+                                        })
+                                    }
                                 }
                             })
                         }
