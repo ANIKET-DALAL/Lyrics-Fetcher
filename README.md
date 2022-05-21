@@ -22,3 +22,7 @@ ___
 4. Select "Load unpacked extension"
 5. Choose the "Source" directory
 ```
+
+# Screenshot
+
+![alt text](https://github.com/ANIKET-DALAL/Lyrics-Fetcher/blob/main/images/Screenshot.png)
