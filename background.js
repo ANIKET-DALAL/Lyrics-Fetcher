@@ -1,12 +1,7 @@
-chrome.tabs.onUpdated.addListener(listener)
+let msg = {
+  txt: "hello",
+};
 
-
-function listener(tabId, changeInfo, tab) {
-    let msg = {
-        txt: 'hello',
-    }
-    
-    setTimeout(function() {
-        chrome.tabs.sendMessage(tabId, msg)
-    },3000)
-}
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.greeting === "hello") sendResponse(msg);
+});
