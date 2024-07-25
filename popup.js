@@ -74,7 +74,7 @@ function getLyricsByArtistAndSong(artist, song) {
                     artist_name.append(artistName);
                     lyrics.append(ly);
                   } else {
-                    ly = html.find(".Lyrics__Container-sc-1ynbvzw-6.jYfhrf");
+                    ly = html.find(".Lyrics__Container-sc-1ynbvzw-1.kUgSbL");
                     console.log(ly);
                     if ($.trim(song_name.html()) != "") {
                       song_name.empty();
