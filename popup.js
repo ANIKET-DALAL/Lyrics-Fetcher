@@ -74,7 +74,7 @@ function getLyricsByArtistAndSong(artist, song) {
                     artist_name.append(artistName);
                     lyrics.append(ly);
                   } else {
-                    ly = html.find(".Lyrics__Container-sc-1ynbvzw-1.kUgSbL");
+                    ly = html.find(".Lyrics__Container-sc-a49d8432-1.fBKwZw");
                     console.log(ly);
                     if ($.trim(song_name.html()) != "") {
                       song_name.empty();
@@ -154,3 +154,4 @@ $("#song").click(function () {
     getLyricsByArtistAndSong(artist_input, song_input);
   }
 });
+
